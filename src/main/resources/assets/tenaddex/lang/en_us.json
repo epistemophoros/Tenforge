@@ -28,6 +28,24 @@
   "tenaddex.gui.skill_forge.extract": "Extract",
   "tenaddex.gui.skill_forge.forge_skill": "Forge Skill",
 
+  "tenaddex.breakdown.storage_error": "Failed to access skill storage.",
+  "tenaddex.breakdown.skill_not_found": "Skill not found in your possession.",
+  "tenaddex.breakdown.full_success": "Broke down %s! Gained %s Skill Energy.",
+  "tenaddex.breakdown.extract_success": "Extracted energy from %s! Gained %s energy. Mastery reduced.",
+
+  "tenaddex.forge.unknown_skill": "Unknown skill - cannot forge.",
+  "tenaddex.forge.already_owned": "You already possess this skill!",
+  "tenaddex.forge.insufficient_energy": "Insufficient Skill Energy! Need %s, have %s.",
+  "tenaddex.forge.insufficient_ep": "Insufficient EP! Need %s EP.",
+  "tenaddex.forge.success": "Successfully forged %s!",
+  "tenaddex.forge.unknown_error": "An unknown error occurred.",
+
+  "tenaddex.transfer.same_player": "Cannot transfer to yourself.",
+  "tenaddex.transfer.storage_error": "Failed to access skill storage.",
+  "tenaddex.transfer.skill_not_found": "You don't have that skill.",
+  "tenaddex.transfer.target_has_skill": "Target already has this skill.",
+  "tenaddex.transfer.success": "Transferred %s to %s!",
+
   "tenaddex.race.example_race": "Example Race",
   "tenaddex.race.example_race.notes": "This is a fully custom race that you can change and control to your liking!"
 }
