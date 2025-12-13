@@ -173,15 +173,16 @@ dependencies {
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
     
     // Mod dependencies using CurseMaven file IDs
-    // Note: Using runtimeOnly without fg.deobf() to avoid Parchment mapping suffix issue with CurseMaven
+    // Note: Using implementation without fg.deobf() to avoid Parchment mapping suffix issue with CurseMaven
+    // The mods are already compiled and don't need deobfuscation - they just need to be on the classpath
     // ManasCore: https://www.curseforge.com/minecraft/mc-mods/manascore (Project ID: 572218)
-    runtimeOnly "curse.maven:manascore-572218:${manasCoreFileId}"
+    implementation "curse.maven:manascore-572218:${manasCoreFileId}"
     // Tensura: https://www.curseforge.com/minecraft/mc-mods/tensura-reincarnated (Project ID: 574856)
-    runtimeOnly "curse.maven:tensura-574856:${tensuraFileId}"
+    implementation "curse.maven:tensura-574856:${tensuraFileId}"
     // GeckoLib: https://www.curseforge.com/minecraft/mc-mods/geckolib (Project ID: 388172)
-    runtimeOnly "curse.maven:geckolib-388172:${geckoFileId}"
+    implementation "curse.maven:geckolib-388172:${geckoFileId}"
     // TerraBlender: https://www.curseforge.com/minecraft/mc-mods/terrablender (Project ID: 563928)
-    runtimeOnly "curse.maven:terrablender-563928:${terrablenderFileId}"
+    implementation "curse.maven:terrablender-563928:${terrablenderFileId}"
 
 
     // Example mod dependency with JEI - using fg.deobf() ensures the dependency is remapped to your development mappings
