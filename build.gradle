@@ -150,10 +150,12 @@ repositories {
         dirs 'lib'
     }
 
+    // CurseMaven repository - must be configured before dependencies
     exclusiveContent {
         forRepository {
             maven {
-                url "https://cursemaven.com/"
+                name = "CurseMaven"
+                url = "https://cursemaven.com/"
             }
         }
         filter {
