@@ -137,20 +137,7 @@ repositories {
     // Put repositories for dependencies here
     // ForgeGradle automatically adds the Forge maven and Maven Central for you
 
-    // If you have mod jar dependencies in ./libs, you can declare them as a repository like so.
-    // See https://docs.gradle.org/current/userguide/declaring_repositories.html#sub:flat_dir_resolver
-    // flatDir {
-    //     dir 'libs'
-    // }
-    mavenCentral()
-    maven {url = 'https://maven.minecraftforge.net'}
-    maven { url = 'https://maven.parchmentmc.org/' }
-
-    flatDir {
-        dirs 'lib'
-    }
-
-    // CurseMaven repository - must be configured before dependencies
+    // CurseMaven repository - must be configured first for proper dependency resolution
     exclusiveContent {
         forRepository {
             maven {
@@ -161,6 +148,14 @@ repositories {
         filter {
             includeGroup "curse.maven"
         }
+    }
+
+    mavenCentral()
+    maven {url = 'https://maven.minecraftforge.net'}
+    maven { url = 'https://maven.parchmentmc.org/' }
+
+    flatDir {
+        dirs 'lib'
     }
 
     // All mod dependencies now come from CurseMaven
