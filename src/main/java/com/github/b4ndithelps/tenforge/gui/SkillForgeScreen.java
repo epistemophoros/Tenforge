@@ -369,7 +369,6 @@ public class SkillForgeScreen extends AbstractContainerScreen<SkillForgeMenu> {
     }
 
     private void renderCreateList(PoseStack poseStack, int startY, int mouseX, int mouseY) {
-        // Note: mouseX/mouseY are already local coords (relative to GUI) from renderLabels
         double currentEnergy = menu.getSkillEnergy();
         
         for (int i = 0; i < SKILLS_PER_PAGE && (i + scrollOffset) < createList.size(); i++) {
@@ -377,7 +376,7 @@ public class SkillForgeScreen extends AbstractContainerScreen<SkillForgeMenu> {
             int y = startY + (i * SKILL_ENTRY_HEIGHT);
             
             boolean isSelected = data == selectedCreateSkill;
-            boolean isHovered = isMouseOverEntry(mouseX, mouseY, 10, y, 155, SKILL_ENTRY_HEIGHT);
+            boolean isHovered = isMouseOverEntry(mouseX - leftPos, mouseY - topPos, 10, y, 155, SKILL_ENTRY_HEIGHT);
             boolean canAfford = currentEnergy >= data.creationCost;
             
             // Background

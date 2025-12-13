@@ -164,7 +164,6 @@ repositories {
     maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven' }
     maven { url 'https://dl.cloudsmith.io/public/manasmods/manascore/maven/' }
     maven { url 'https://dl.cloudsmith.io/public/manasmods/tensura/maven/' }
-    maven { url 'https://jitpack.io/' }
     maven { url "https://maven.firstdarkdev.xyz/snapshots" }
 }
 
@@ -176,8 +175,9 @@ dependencies {
     // then special handling is done to allow a setup of a vanilla dependency without the use of an external repository.
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
-    implementation fg.deobf("com.github.manasmods:ManasCore:${minecraft_version}-${manasCoreVersion}")
-    implementation fg.deobf("com.github.manasmods:tensura:${minecraft_version}-${tensuraVersion}")
+    // Using public Cloudsmith maven (not JitPack which requires auth)
+    implementation fg.deobf("com.manasmods:manascore:${minecraft_version}-${manasCoreVersion}")
+    implementation fg.deobf("com.manasmods:tensura:${minecraft_version}-${tensuraVersion}")
     implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.19:3.1.40')
     //implementation fg.deobf("curse.maven:gecko-${geckoVersion}")
     implementation fg.deobf('com.github.glitchfiend:TerraBlender-forge:1.19.2-2.0.1.162')
