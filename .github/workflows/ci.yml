@@ -63,7 +63,7 @@ jobs:
           
           COMMITS=$(git log origin/main..HEAD --oneline --no-merges | head -20)
           
-          BODY="## TensuraWEL Update
+          BODY="## Tenforge Update
           
           ### Changes from dev:
           \`\`\`
@@ -73,7 +73,7 @@ jobs:
           Merging will auto-create a new release with version bump."
           
           if [ -z "$PR" ]; then
-            gh pr create --head dev --base main --title "TensuraWEL Update" --body "$BODY"
+            gh pr create --head dev --base main --title "Tenforge Update" --body "$BODY"
           else
             gh pr edit "$PR" --body "$BODY"
           fi
@@ -103,18 +103,15 @@ jobs:
           echo "Latest tag: $LATEST_TAG"
           
           if [ -z "$LATEST_TAG" ]; then
-            # Read version from gradle.properties
             NEW=$(grep "^mod_version=" gradle.properties | cut -d'=' -f2)
             echo "First release, using gradle.properties: $NEW"
           else
             CURRENT="${LATEST_TAG#v}"
             echo "Current version: $CURRENT"
             
-            # Handle SNAPSHOT versions
             CURRENT="${CURRENT%-SNAPSHOT}"
             
             IFS='.' read -r MAJOR MINOR PATCH <<< "$CURRENT"
-            # Handle versions like "1.0" with no patch
             if [ -z "$PATCH" ]; then
               PATCH=0
             fi
@@ -139,14 +136,14 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           VERSION="${{ steps.v.outputs.ver }}"
-          JAR_FILE=$(ls build/libs/tenaddex-*.jar 2>/dev/null | grep -v sources | head -1 || ls build/libs/*.jar | grep -v sources | head -1)
+          JAR_FILE=$(ls build/libs/tenforge-*.jar 2>/dev/null | grep -v sources | head -1 || ls build/libs/*.jar | grep -v sources | head -1)
           JAR_NAME=$(basename "$JAR_FILE")
           
           echo "Creating release v$VERSION"
           
           gh release create "v$VERSION" \
-            --title "TensuraWEL v$VERSION" \
-            --notes "## TensuraWEL v$VERSION
+            --title "Tenforge v$VERSION" \
+            --notes "## Tenforge v$VERSION
           
           ### Installation
           1. Download \`$JAR_NAME\`
@@ -154,9 +151,9 @@ jobs:
           3. Requires **Minecraft Forge 1.19.2** and **Tensura: Reincarnated mod**
           
           ### Features
-          - Custom skills including Skill Forge (analyze, synthesize, replicate skills)
-          - Example skills demonstrating common, intrinsic, extra, unique, and ultimate skill types
-          - Skill essence system for breaking down and creating new abilities" \
+          - **Skill Forge**: Break down skills into energy, forge new skills
+          - GUI-based skill management
+          - Cross-mod compatible with all ManasCore skills" \
             "$JAR_FILE"
 
       - name: Commit version bump
