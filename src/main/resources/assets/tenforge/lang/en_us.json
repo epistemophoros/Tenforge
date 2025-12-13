@@ -1,0 +1,51 @@
+{
+  "tenforge.skill.example_ultimate": "Example Ultimate",
+  "tenforge.skill.example_ultimate.description": "This is a description for the ultimate skill. Edit this description using the en_us.json file.",
+
+  "tenforge.skill.example_common": "Example Common",
+  "tenforge.skill.example_common.description": "This is a description for the common skill. Edit this description using the en_us.json file.",
+
+  "tenforge.skill.example_extra": "Example Extra",
+  "tenforge.skill.example_extra.description": "This is a description for the extra skill. Edit this description using the en_us.json file.",
+
+  "tenforge.skill.example_unique": "Example Unique",
+  "tenforge.skill.example_unique.description": "This is a description for the unique skill. Edit this description using the en_us.json file.",
+  "tenforge.skill.mode.example_unique.boom": "Boom",
+  "tenforge.skill.mode.example_unique.big_boom": "Bigger Boom",
+
+  "tenforge.skill.example_intrinsic": "Example Intrinsic",
+  "tenforge.skill.example_intrinsic.description": "This is a description for the intrinsic skill. Edit this description using the en_us.json file.",
+
+  "tenforge.skill.skill_forge": "Skill Forge",
+  "tenforge.skill.skill_forge.description": "A unique skill inspired by Raphael and Creator. Break down skills into pure energy and forge them into new abilities. Like the Voice of the World, analyze and reconstruct the very essence of skills.",
+  "tenforge.skill.mode.skill_forge.forge": "Open Forge",
+  
+  "tenforge.gui.skill_forge.title": "Skill Forge",
+  "tenforge.gui.skill_forge.breakdown": "Breakdown",
+  "tenforge.gui.skill_forge.create": "Create",
+  "tenforge.gui.skill_forge.energy": "Skill Energy",
+  "tenforge.gui.skill_forge.full_breakdown": "Full Breakdown",
+  "tenforge.gui.skill_forge.extract": "Extract",
+  "tenforge.gui.skill_forge.forge_skill": "Forge Skill",
+
+  "tenforge.breakdown.storage_error": "Failed to access skill storage.",
+  "tenforge.breakdown.skill_not_found": "Skill not found in your possession.",
+  "tenforge.breakdown.full_success": "Broke down %s! Gained %s Skill Energy.",
+  "tenforge.breakdown.extract_success": "Extracted energy from %s! Gained %s energy. Mastery reduced.",
+
+  "tenforge.forge.unknown_skill": "Unknown skill - cannot forge.",
+  "tenforge.forge.already_owned": "You already possess this skill!",
+  "tenforge.forge.insufficient_energy": "Insufficient Skill Energy! Need %s, have %s.",
+  "tenforge.forge.insufficient_ep": "Insufficient EP! Need %s EP.",
+  "tenforge.forge.success": "Successfully forged %s!",
+  "tenforge.forge.unknown_error": "An unknown error occurred.",
+
+  "tenforge.transfer.same_player": "Cannot transfer to yourself.",
+  "tenforge.transfer.storage_error": "Failed to access skill storage.",
+  "tenforge.transfer.skill_not_found": "You don't have that skill.",
+  "tenforge.transfer.target_has_skill": "Target already has this skill.",
+  "tenforge.transfer.success": "Transferred %s to %s!",
+
+  "tenforge.race.example_race": "Example Race",
+  "tenforge.race.example_race.notes": "This is a fully custom race that you can change and control to your liking!"
+}

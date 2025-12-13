@@ -61,4 +61,4 @@ mandatory = true
 versionRange = "${minecraft_version_range}"
 ordering = "NONE"
 side = "BOTH"
-mixins = "tenaddex.mixins.json"
+mixins = "tenforge.mixins.json"
