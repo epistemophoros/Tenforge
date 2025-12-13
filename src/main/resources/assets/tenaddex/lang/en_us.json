@@ -1,0 +1,36 @@
+{
+  "tenaddex.skill.example_ultimate": "Example Ultimate",
+  "tenaddex.skill.example_ultimate.description": "This is a description for the ultimate skill. Edit this description using the en_us.json file.",
+
+  "tenaddex.skill.example_common": "Example Common",
+  "tenaddex.skill.example_common.description": "This is a description for the common skill. Edit this description using the en_us.json file.",
+
+  "tenaddex.skill.example_extra": "Example Extra",
+  "tenaddex.skill.example_extra.description": "This is a description for the extra skill. Edit this description using the en_us.json file.",
+
+  "tenaddex.skill.example_unique": "Example Unique",
+  "tenaddex.skill.example_unique.description": "This is a description for the unique skill. Edit this description using the en_us.json file.",
+  "tenaddesx.skill.mode.example_unique.boom": "Boom",
+  "tenaddesx.skill.mode.example_unique.big_boom": "Bigger Boom",
+
+  "tenaddex.skill.example_intrinsic": "Example Intrinsic",
+  "tenaddex.skill.example_intrinsic.description": "This is a description for the intrinsic skill. Edit this description using the en_us.json file.",
+
+  "tenaddex.skill.skill_forge": "Skill Forge",
+  "tenaddex.skill.skill_forge.description": "A unique skill that allows the user to analyze, break down, and synthesize skills. Like the Voice of the World analyzing and combining abilities, this skill extracts the essence of mastered skills and forges them into new powers.",
+  "tenaddex.skill.mode.skill_forge.analyze": "Analyze",
+  "tenaddex.skill.mode.skill_forge.synthesize": "Synthesize",
+  "tenaddex.skill.mode.skill_forge.replicate": "Replicate",
+  "tenaddex.skill.skill_forge.no_skills": "No skills available to analyze.",
+  "tenaddex.skill.skill_forge.nothing_to_analyze": "No unanalyzed skills with sufficient mastery found.",
+  "tenaddex.skill.skill_forge.analyzed": "Analyzed %s! Extracted: %s",
+  "tenaddex.skill.skill_forge.no_essences": "No essences stored. Analyze skills first.",
+  "tenaddex.skill.skill_forge.essence_inventory": "Current Essences: %s",
+  "tenaddex.skill.skill_forge.cannot_synthesize": "Insufficient essences for any known synthesis recipe.",
+  "tenaddex.skill.skill_forge.synthesized": "Successfully synthesized: %s!",
+  "tenaddex.skill.skill_forge.no_analyzed_skills": "No skills have been analyzed yet.",
+  "tenaddex.skill.skill_forge.replicated": "Manifesting the essence of: %s",
+
+  "tenaddex.race.example_race": "Example Race",
+  "tenaddex.race.example_race.notes": "This is a fully custom race that you can change and control to your liking!"
+}
