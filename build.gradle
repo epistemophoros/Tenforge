@@ -161,10 +161,7 @@ repositories {
         }
     }
 
-    maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven' }
-    maven { url 'https://dl.cloudsmith.io/public/manasmods/manascore/maven/' }
-    maven { url 'https://dl.cloudsmith.io/public/manasmods/tensura/maven/' }
-    maven { url "https://maven.firstdarkdev.xyz/snapshots" }
+    // All mod dependencies now come from CurseMaven
 }
 
 dependencies {
@@ -175,13 +172,16 @@ dependencies {
     // then special handling is done to allow a setup of a vanilla dependency without the use of an external repository.
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
-    // Using public Cloudsmith maven (not JitPack which requires auth)
-    implementation fg.deobf("com.manasmods:manascore:${minecraft_version}-${manasCoreVersion}")
-    implementation fg.deobf("com.manasmods:tensura:${minecraft_version}-${tensuraVersion}")
-    implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.19:3.1.40')
-    //implementation fg.deobf("curse.maven:gecko-${geckoVersion}")
-    implementation fg.deobf('com.github.glitchfiend:TerraBlender-forge:1.19.2-2.0.1.162')
-    //implementation fg.deobf("curse.maven:terrablender-${terrablenderVersion}")
+    
+    // CurseMaven dependencies - format: curse.maven:modname-projectId:fileId
+    // ManasCore: https://www.curseforge.com/minecraft/mc-mods/manascore (Project ID: 572218)
+    // Tensura: https://www.curseforge.com/minecraft/mc-mods/tensura-reincarnated (Project ID: 574856)
+    // GeckoLib: https://www.curseforge.com/minecraft/mc-mods/geckolib (Project ID: 388172)
+    // TerraBlender: https://www.curseforge.com/minecraft/mc-mods/terrablender (Project ID: 563928)
+    implementation fg.deobf("curse.maven:manascore-572218:${manasCoreFileId}")
+    implementation fg.deobf("curse.maven:tensura-574856:${tensuraFileId}")
+    implementation fg.deobf("curse.maven:geckolib-388172:${geckoFileId}")
+    implementation fg.deobf("curse.maven:terrablender-563928:${terrablenderFileId}")
 
 
     // Example mod dependency with JEI - using fg.deobf() ensures the dependency is remapped to your development mappings
