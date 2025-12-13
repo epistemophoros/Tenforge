@@ -141,15 +141,26 @@ repositories {
     maven {url = 'https://maven.minecraftforge.net'}
     maven { url = 'https://maven.parchmentmc.org/' }
 
+    // Mod-specific Maven repositories
+    maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven' }
+    maven { url 'https://jitpack.io/' }
+
     flatDir {
         dirs 'lib'
     }
 
-    // Mod-specific Maven repositories
-    maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven' }
-    maven { url 'https://dl.cloudsmith.io/public/manasmods/manascore/maven/' }
-    maven { url 'https://dl.cloudsmith.io/public/manasmods/tensura/maven/' }
-    maven { url 'https://jitpack.io/' }
+    // CurseMaven for mod dependencies
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "CurseMaven"
+                url = "https://cursemaven.com/"
+            }
+        }
+        filter {
+            includeGroup "curse.maven"
+        }
+    }
 }
 
 dependencies {
@@ -161,15 +172,17 @@ dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
     
-    // Mod dependencies using proper Maven coordinates
-    // ManasCore: https://github.com/manasmods/ManasCore
-    implementation fg.deobf("com.github.manasmods:ManasCore:${minecraft_version}-${manasCoreVersion}")
-    // Tensura: https://github.com/manasmods/tensura
-    implementation fg.deobf("com.github.manasmods:tensura:${minecraft_version}-${tensuraVersion}")
-    // GeckoLib: https://github.com/bernie-g/geckolib
-    implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.19:3.1.40')
-    // TerraBlender: https://github.com/Glitchfiend/TerraBlender
-    implementation fg.deobf('com.github.glitchfiend:TerraBlender-forge:1.19.2-2.0.1.162')
+    // Mod dependencies using CurseMaven file IDs
+    // ManasCore: https://www.curseforge.com/minecraft/mc-mods/manascore (Project ID: 572218)
+    // File ID for 1.19.2-2.1.4.3: Get from CurseForge file page
+    implementation fg.deobf("curse.maven:manascore-572218:${manasCoreFileId}")
+    // Tensura: https://www.curseforge.com/minecraft/mc-mods/tensura-reincarnated (Project ID: 574856)
+    // File ID for 1.19.2-1.0.2.5: Get from CurseForge file page
+    implementation fg.deobf("curse.maven:tensura-574856:${tensuraFileId}")
+    // GeckoLib: https://www.curseforge.com/minecraft/mc-mods/geckolib (Project ID: 388172)
+    implementation fg.deobf("curse.maven:geckolib-388172:${geckoFileId}")
+    // TerraBlender: https://www.curseforge.com/minecraft/mc-mods/terrablender (Project ID: 563928)
+    implementation fg.deobf("curse.maven:terrablender-563928:${terrablenderFileId}")
 
 
     // Example mod dependency with JEI - using fg.deobf() ensures the dependency is remapped to your development mappings
