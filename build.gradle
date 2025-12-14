@@ -143,6 +143,8 @@ repositories {
 
     // Mod-specific Maven repositories
     maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven' }
+    maven { url 'https://dl.cloudsmith.io/public/manasmods/manascore/maven/' }
+    maven { url 'https://dl.cloudsmith.io/public/manasmods/tensura/maven/' }
     maven { url 'https://jitpack.io/' }
 
     flatDir {
@@ -172,16 +174,17 @@ dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
     
-    // Mod dependencies using CurseMaven file IDs
-    // Note: Using implementation without fg.deobf() to avoid Parchment mapping suffix issue with CurseMaven
-    // The mods are already compiled and don't need deobfuscation - they just need to be on the classpath
-    // ManasCore: https://www.curseforge.com/minecraft/mc-mods/manascore (Project ID: 572218)
-    implementation "curse.maven:manascore-572218:${manasCoreFileId}"
-    // Tensura: https://www.curseforge.com/minecraft/mc-mods/tensura-reincarnated (Project ID: 574856)
-    implementation "curse.maven:tensura-574856:${tensuraFileId}"
+    // Mod dependencies using Maven coordinates from Cloudsmith
+    // ManasCore: https://github.com/manasmods/ManasCore
+    // Using Maven coordinates to avoid CurseMaven issues
+    implementation "com.github.manasmods:ManasCore:${minecraft_version}-${manasCoreVersion}"
+    // Tensura: https://github.com/manasmods/tensura
+    implementation "com.github.manasmods:tensura:${minecraft_version}-${tensuraVersion}"
     // GeckoLib: https://www.curseforge.com/minecraft/mc-mods/geckolib (Project ID: 388172)
+    // Still using CurseMaven for GeckoLib as it's not on Cloudsmith
     implementation "curse.maven:geckolib-388172:${geckoFileId}"
     // TerraBlender: https://www.curseforge.com/minecraft/mc-mods/terrablender (Project ID: 563928)
+    // Still using CurseMaven for TerraBlender
     implementation "curse.maven:terrablender-563928:${terrablenderFileId}"
 
 
