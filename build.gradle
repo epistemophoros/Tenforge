@@ -177,9 +177,10 @@ dependencies {
     // Mod dependencies using Maven coordinates from Cloudsmith
     // ManasCore: https://github.com/manasmods/ManasCore
     // Using Maven coordinates to avoid CurseMaven issues
-    implementation "com.github.manasmods:ManasCore:${minecraft_version}-${manasCoreVersion}"
+    // Note: Using fg.deobf() for proper deobfuscation with Parchment mappings
+    implementation fg.deobf("com.github.manasmods:ManasCore:${minecraft_version}-${manasCoreVersion}")
     // Tensura: https://github.com/manasmods/tensura
-    implementation "com.github.manasmods:tensura:${minecraft_version}-${tensuraVersion}"
+    implementation fg.deobf("com.github.manasmods:tensura:${minecraft_version}-${tensuraVersion}")
     // GeckoLib: https://www.curseforge.com/minecraft/mc-mods/geckolib (Project ID: 388172)
     // Still using CurseMaven for GeckoLib as it's not on Cloudsmith
     implementation "curse.maven:geckolib-388172:${geckoFileId}"
